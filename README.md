@@ -94,8 +94,10 @@ print(lasso.score(test_scaled, test_target)) # Lasso regression evaluation
 ```
 Ridge Regression: R² Scores vs. Alpha Values
 ![image](https://github.com/user-attachments/assets/bf8f6c27-3e94-4af5-ad47-5308a9ce4c46)
+
 The best alpha value is where the two lines are closest, and the test score is highest, which is at -1, or 10^-1.
 
 Lasso Regression: R² Scores vs. Alpha Values
 ![image](https://github.com/user-attachments/assets/63f92935-4362-40f3-a8e0-ec54f6f0098a)
+
 Moving left shows overfitting, and moving right shows underfitting. The ideal alpha is around 1, which is 10^1.
