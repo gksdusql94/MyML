@@ -5,13 +5,6 @@
 In this chapter, we implement the k-Nearest Neighbors (KNN) algorithm to classify two types of fish—Bream and Smelt—based on their length and weight. The dataset includes labeled fish measurements, and we explore visualization, model training, and prediction accuracy.
 
 ### Key Code
-from sklearn.neighbors import KNeighborsClassifier
-
-# Fish data: Bream (1) and Smelt (0)
-fish_data = [[l, w] for l, w in zip(bream_length + smelt_length, bream_weight + smelt_weight)]
-fish_target = [1] * 35 + [0] * 14  # 1 for Bream, 0 for Smelt
-
-# Train KNN model
 ```python
 # Data visualization
 plt.scatter(bream_length, bream_weight, label='Bream')
