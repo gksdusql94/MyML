@@ -73,7 +73,8 @@ lr = LinearRegression()
 lr.fit(train_input, train_target)
 print(lr.predict([[50]]))  # Predicting the weight of a 50 cm perch using Linear Regression
 ```
--Polynomial Regression:
+
+- Polynomial Regression:
 ```python
 poly = PolynomialFeatures(degree=2, include_bias=False)
 train_poly = poly.fit_transform(train_input)
@@ -81,7 +82,7 @@ lr.fit(train_poly, train_target)
 print(lr.predict([[50**2, 50]]))  # Predicting using polynomial features
 ```
 
--Regularization (Ridge and Lasso):
+- Regularization (Ridge and Lasso):
 ```python
 ridge = Ridge(alpha=0.1)
 ridge.fit(train_scaled, train_target)
