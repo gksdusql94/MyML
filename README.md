@@ -50,5 +50,8 @@ plt.xlabel('Length')
 plt.ylabel('Weight')
 plt.show()  # The plot has changed because we standardized the features.
 ```
-
 ![image](https://github.com/user-attachments/assets/30d31f2d-e991-485c-9e8f-e12efb1355b8)
+
+- Problem: Prediction errors due to different scales of features (length vs. weight).
+- Solution: Standardize features to have a mean of 0 and a standard deviation of 1 using Z-score normalization.
+- Result: After standardization, the KNN model achieved 100% accuracy, demonstrating the importance of data preprocessing.
