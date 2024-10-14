@@ -55,3 +55,39 @@ plt.show()  # The plot has changed because we standardized the features.
 - Problem: Prediction errors due to different scales of features (length vs. weight).
 - Solution: Standardize features to have a mean of 0 and a standard deviation of 1 using Z-score normalization.
 - Result: After standardization, the KNN model achieved 100% accuracy, demonstrating the importance of data preprocessing.
+
+## CH 3: Regression (KNN and Linear) and Regularization
+In Chapter 3, we apply both K-Nearest Neighbors (KNN) regression and Linear Regression to predict the weight of a perch based on its length, height, and width. We also explore Polynomial Regression to fit non-linear data and introduce Regularization techniques like Ridge and Lasso to prevent overfitting.
+
+### Key Code
+- KNN Regression:
+```python
+knr = KNeighborsRegressor(n_neighbors=3)
+knr.fit(train_input, train_target)
+print(knr.predict([[50]]))  # Predicting the weight of a 50 cm perch
+```
+
+- Linear Regression:
+```python
+lr = LinearRegression()
+lr.fit(train_input, train_target)
+print(lr.predict([[50]]))  # Predicting the weight of a 50 cm perch using Linear Regression
+```
+-Polynomial Regression:
+```python
+poly = PolynomialFeatures(degree=2, include_bias=False)
+train_poly = poly.fit_transform(train_input)
+lr.fit(train_poly, train_target)
+print(lr.predict([[50**2, 50]]))  # Predicting using polynomial features
+```
+
+-Regularization (Ridge and Lasso):
+```python
+ridge = Ridge(alpha=0.1)
+ridge.fit(train_scaled, train_target)
+print(ridge.score(test_scaled, test_target))  # Ridge regression evaluation
+
+lasso = Lasso(alpha=10)
+lasso.fit(train_scaled, train_target)
+print(lasso.score(test_scaled, test_target)) # Lasso regression evaluation
+```
